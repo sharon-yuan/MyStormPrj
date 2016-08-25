@@ -18,16 +18,16 @@ public class ExclamationTopology {
 		Config conf=new Config();
 		conf.setDebug(true);
 		
-		//if(args!=null&&args.length>0){
+		if(args!=null&&args.length>0){
 			conf.setNumWorkers(3);
 			StormSubmitter.submitTopology("tolo1", conf, builder.createTopology());
-		//}else{
-			/*LocalCluster cluster=new LocalCluster();
+		}else{
+			LocalCluster cluster=new LocalCluster();
 			cluster.submitTopology("test", conf, builder.createTopology());
 			Utils.sleep(10000);
 			cluster.killTopology("test");
-			cluster.shutdown();*/
-		//}
+			cluster.shutdown();
+		}
 	}
 
 }
